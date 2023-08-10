@@ -34,6 +34,7 @@ function App() {
 
   const onFinish = (fieldsValue: TubeI) => {
     const tube = new Tube(fieldsValue);
+    form.resetFields(['company', 'age', 'visionDefect']);
     RackPoll.addTube(tube);
   };
 
@@ -68,7 +69,10 @@ function App() {
             rules={[{ required: true }, { type: 'number', min: 1 }]}>
             <InputNumber className="age" />
           </Form.Item>
-          <Form.Item name="defect" label="Vision Defect" rules={[{ required: true }]}>
+          <Form.Item
+            name="visionDefect"
+            label="Vision Defect"
+            rules={[{ required: true }]}>
             <Input />
           </Form.Item>
           <Form.Item>
